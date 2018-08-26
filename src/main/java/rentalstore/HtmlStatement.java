@@ -14,7 +14,7 @@ public class HtmlStatement {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration<Rental> rentals = customer.getRentals().elements();
-        String result = "<H1>Rentals for <EM>" + customer.getName() + "</EM></H1><P>\n";
+        String result = getHeader();
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = rentals.nextElement();
@@ -53,5 +53,9 @@ public class HtmlStatement {
         result += "<P>You owe<EM>" + String.valueOf(totalAmount) + "</EM><P>\n";
         result += "On this rental you earned <EM>" + String.valueOf(frequentRenterPoints) + "</EM> frequent renter points<P>";
         return result;
+    }
+
+    private String getHeader() {
+        return "<H1>Rentals for <EM>"+ customer.getName()+ "</EM></H1><P>\n";
     }
 }
