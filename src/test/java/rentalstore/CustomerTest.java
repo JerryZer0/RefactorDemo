@@ -22,6 +22,7 @@ public class CustomerTest {
         Movie movie1 = new Movie("Roman Holiday", 0);
         Rental rental1 = new Rental(movie1, 1);
         customer.addRental(rental1);
+
         String receipt = customer.statement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
@@ -35,6 +36,7 @@ public class CustomerTest {
         Movie movie1 = new Movie("Roman Holiday", 0);
         Rental rental1 = new Rental(movie1, 3);
         customer.addRental(rental1);
+
         String receipt = customer.statement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
@@ -48,6 +50,7 @@ public class CustomerTest {
         Movie movie = new Movie("Roman Holiday", 1);
         Rental rental1 = new Rental(movie, 1);
         customer.addRental(rental1);
+
         String receipt = customer.statement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
@@ -61,6 +64,7 @@ public class CustomerTest {
         Movie movie = new Movie("Roman Holiday", 2);
         Rental rental1 = new Rental(movie, 1);
         customer.addRental(rental1);
+
         String receipt = customer.statement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
@@ -77,6 +81,7 @@ public class CustomerTest {
         Rental rental2 = new Rental(movie2, 1);
         customer.addRental(rental1);
         customer.addRental(rental2);
+
         String receipt = customer.statement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
