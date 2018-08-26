@@ -19,14 +19,8 @@ public abstract class Statement {
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = rentals.nextElement();
-            //Movie movie = each.getMovie();
             thisAmount += each.getAmount();
-            frequentRenterPoints++;
-            //add bonus for a two day new release rental
-            if ((each.getMovie().getType().getClass() == NewRelease.class) && each.getDayRented() > 1) {
-                frequentRenterPoints++;
-            }
-
+            frequentRenterPoints = each.updateFrequentRenterPointers(frequentRenterPoints);
             result += getBody(thisAmount, each);
             totalAmount += thisAmount;
         }
