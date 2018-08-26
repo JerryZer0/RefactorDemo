@@ -19,9 +19,9 @@ public class CustomerTest {
 
     @Test
     public void should_return_the_HTML_result_as_name_is_Jerry_and_rent_one_film_Roman_Holiday_for_one_day() {
-        Movie movie1 = new Movie("Roman Holiday", new Regular());
-        Rental rental1 = new Rental(movie1, 1);
-        customer.addRental(rental1);
+        Movie movie = new Movie("Roman Holiday", new Regular());
+        Rental rental = new Rental(movie, 1);
+        customer.addRental(rental);
 
         String receipt = customer.htmlStatement();
 
@@ -33,9 +33,9 @@ public class CustomerTest {
 
     @Test
     public void should_return_the_HTML_result_as_name_is_Jerry_and_rent_one_film_Roman_Holiday_for_three_days() {
-        Movie movie1 = new Movie("Roman Holiday", new Regular());
-        Rental rental1 = new Rental(movie1, 3);
-        customer.addRental(rental1);
+        Movie movie = new Movie("Roman Holiday", new Regular());
+        Rental rental = new Rental(movie, 3);
+        customer.addRental(rental);
 
         String receipt = customer.htmlStatement();
 
@@ -48,8 +48,8 @@ public class CustomerTest {
     @Test
     public void should_return_the_HTML_result_as_name_is_Jerry_and_rent_one_new_release_film_for_one_day() {
         Movie movie = new Movie("Roman Holiday", new NewRelease());
-        Rental rental1 = new Rental(movie, 1);
-        customer.addRental(rental1);
+        Rental rental = new Rental(movie, 1);
+        customer.addRental(rental);
 
         String receipt = customer.htmlStatement();
 
@@ -62,8 +62,8 @@ public class CustomerTest {
     @Test
     public void should_return_the_HTML_result_as_name_is_Jerry_and_rent_one_child_film_for_one_day() {
         Movie movie = new Movie("Roman Holiday", new Childrens());
-        Rental rental1 = new Rental(movie, 1);
-        customer.addRental(rental1);
+        Rental rental = new Rental(movie, 1);
+        customer.addRental(rental);
 
         String receipt = customer.htmlStatement();
 
@@ -107,5 +107,19 @@ public class CustomerTest {
                 + "Titanic\t3.0\n"
                 + "You owe 6.0\n"
                 + "On this rental you earned 2 frequent renter points", receipt);
+    }
+
+    @Test
+    public void should_return_the_HTML_result_as_name_is_Jerry_and_rent_literary_film_for_one_day() {
+        Movie movie = new Movie("Roman Holiday", new Literary());
+        Rental rental1 = new Rental(movie, 1);
+        customer.addRental(rental1);
+
+        String receipt = customer.textStatement();
+
+        assertEquals("Rentals for Jerry\n"
+                + "Roman Holiday\t6.0\n"
+                + "You owe 6.0\n"
+                + "On this rental you earned 1.5 frequent renter points", receipt);
     }
 }

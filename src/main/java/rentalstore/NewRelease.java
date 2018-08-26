@@ -6,7 +6,7 @@ public class NewRelease extends MovieType{
         return  thisAmount;
     }
 
-    public double updateFrequentRenterPointers(int frequentRenterPoints, int dayRented){
+    public int updateFrequentRenterPointers(int frequentRenterPoints, int dayRented){
         if (dayRented > 1) {
             frequentRenterPoints++;
         }
