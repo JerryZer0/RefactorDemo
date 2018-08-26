@@ -19,8 +19,7 @@ public abstract class Statement {
             double thisAmount = 0;
             Rental each = rentals.nextElement();
             //Movie movie = each.getMovie();
-            thisAmount = new MovieType().getAmount(thisAmount, each);
-
+            thisAmount += each.getMovie().getType().getAmount(each);
             frequentRenterPoints++;
             //add bonus for a two day new release rental
             if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDayRented() > 1) {

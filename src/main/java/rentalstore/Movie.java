@@ -14,8 +14,13 @@ public class Movie {
         this.priceCode = priceCode;
     }
 
-    public double getAmount(double thisAmount,Rental rental) {
-        return type.getAmount(thisAmount,rental);
+    public Movie(String title, MovieType type) {
+        this.title = title;
+        this.type = type;
+    }
+
+    public double getAmount(Rental rental) {
+        return type.getAmount(rental);
     }
 
     public int getPriceCode() {
@@ -24,5 +29,9 @@ public class Movie {
 
     public String getTitle() {
         return title;
+    }
+
+    public MovieType getType() {
+        return type;
     }
 }

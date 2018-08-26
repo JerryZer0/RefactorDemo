@@ -1,20 +1,18 @@
 package rentalstore;
 
-public class MovieType {
-    public double getAmount(double thisAmount, Rental each)
-    {
+public abstract class MovieType {
+    public abstract double getAmount(Rental each);
+    /* {
+        double thisAmount = 0;
         switch (each.getMovie().getPriceCode()) {
             case Movie.REGULAR:
-                thisAmount += new Regular().getAmount(each);
-                break;
+                return new Regular().getAmount(each);
             case Movie.NEW_RELEASE:
-                thisAmount += new NewRelease().getAmount(each);
-                break;
+                return new NewRelease().getAmount(each);
             case Movie.CHILDRENS:
-                thisAmount += new Childrens().getAmount(each);
-                break;
+                return new Childrens().getAmount(each);
         }
         return thisAmount;
-    }
+    }*/
 
 }

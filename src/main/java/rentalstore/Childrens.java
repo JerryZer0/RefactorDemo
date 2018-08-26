@@ -1,10 +1,10 @@
 package rentalstore;
 
 public class Childrens{
-    public double getAmount(Rental each) {
+    public double getAmount(Rental rental) {
         double thisAmount = 1.5;
-        if (each.getDayRented() > 3) {
-            thisAmount += (each.getDayRented() - 3) * 1.5;
+        if (rental.getDayRented() > 3) {
+            thisAmount += (rental.getDayRented() - 3) * 1.5;
         }
         return thisAmount;
     }
