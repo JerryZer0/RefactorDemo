@@ -5,4 +5,11 @@ public class NewRelease extends MovieType{
         double thisAmount = dayRented * 3;
         return  thisAmount;
     }
+
+    public double updateFrequentRenterPointers(int frequentRenterPoints, int dayRented){
+        if (dayRented > 1) {
+            frequentRenterPoints++;
+        }
+        return ++frequentRenterPoints;
+    }
 }
