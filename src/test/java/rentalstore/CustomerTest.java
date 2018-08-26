@@ -43,4 +43,18 @@ public class CustomerTest {
                 + "On this rental you earned <EM>1</EM> frequent renter points<P>", receipt);
     }
 
+    @Test
+    public void should_return_the_HTML_result_as_name_is_Jerry_and_rent_one_new_release_film_for_one_day() {
+        Movie movie = new Movie("Roman Holiday", 1);
+        Rental rental1 = new Rental(movie, 1);
+        customer.addRental(rental1);
+        String receipt = customer.statement();
+
+        assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
+                + "Roman Holiday\t3.0<BR>\n"
+                + "<P>You owe<EM>3.0</EM><P>\n"
+                + "On this rental you earned <EM>1</EM> frequent renter points<P>", receipt);
+    }
+
+
 }
