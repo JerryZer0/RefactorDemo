@@ -1,24 +1,20 @@
 package rentalstore;
 
-class MovieType {
-    double getAmount(double thisAmount, Rental each) {
+public class MovieType {
+    public double getAmount(double thisAmount, Rental each)
+    {
         switch (each.getMovie().getPriceCode()) {
             case Movie.REGULAR:
-                thisAmount += 2;
-                if (each.getDayRented() > 2) {
-                    thisAmount += (each.getDayRented() - 2) * 1.5;
-                }
+                thisAmount += new Regular().getAmount(each);
                 break;
             case Movie.NEW_RELEASE:
-                thisAmount += each.getDayRented() * 3;
+                thisAmount += new NewRelease().getAmount(each);
                 break;
             case Movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (each.getDayRented() > 3) {
-                    thisAmount += (each.getDayRented() - 3) * 1.5;
-                }
+                thisAmount += new Childrens().getAmount(each);
                 break;
         }
         return thisAmount;
     }
+
 }

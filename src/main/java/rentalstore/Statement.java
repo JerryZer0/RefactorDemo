@@ -18,6 +18,7 @@ public abstract class Statement {
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = rentals.nextElement();
+            //Movie movie = each.getMovie();
             thisAmount = new MovieType().getAmount(thisAmount, each);
 
             frequentRenterPoints++;

@@ -7,10 +7,15 @@ public class Movie {
 
     private String title;
     private int priceCode;
+    private MovieType type;
 
     public Movie(String title, int priceCode) {
         this.title = title;
         this.priceCode = priceCode;
+    }
+
+    public double getAmount(double thisAmount,Rental rental) {
+        return type.getAmount(thisAmount,rental);
     }
 
     public int getPriceCode() {

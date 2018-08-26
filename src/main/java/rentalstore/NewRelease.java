@@ -1,4 +1,8 @@
 package rentalstore;
 
-public class NewRelease extends MovieType {
+public class NewRelease{
+    public double getAmount(Rental each) {
+        double thisAmount = each.getDayRented() * 3;
+        return  thisAmount;
+    }
 }
