@@ -54,7 +54,7 @@ public class Customer {
             }
 
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "<BR>\n";
+            result += each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "<BR>\n";
             totalAmount += thisAmount;
         }
 
