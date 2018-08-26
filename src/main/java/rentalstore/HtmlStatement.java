@@ -14,7 +14,9 @@ public class HtmlStatement {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration<Rental> rentals = customer.getRentals().elements();
+
         String result = getHeader();
+
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = rentals.nextElement();
@@ -45,17 +47,28 @@ public class HtmlStatement {
             }
 
             //show figures for this rental
-            result += each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "<BR>\n";
+            result += getBody(thisAmount, each);
             totalAmount += thisAmount;
         }
 
-        //add footer lines
-        result += "<P>You owe<EM>" + String.valueOf(totalAmount) + "</EM><P>\n";
-        result += "On this rental you earned <EM>" + String.valueOf(frequentRenterPoints) + "</EM> frequent renter points<P>";
+        result += getFooter(totalAmount, frequentRenterPoints);
         return result;
     }
 
+    private String getBody(double thisAmount, Rental each) {
+        return each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "<BR>\n";
+    }
+
+    private String getFooter(double totalAmount, int frequentRenterPoints) {
+        return "<P>You owe<EM>"
+                + String.valueOf(totalAmount)
+                + "</EM><P>\n"
+                + "On this rental you earned <EM>"
+                + String.valueOf(frequentRenterPoints)
+                + "</EM> frequent renter points<P>";
+    }
+
     private String getHeader() {
-        return "<H1>Rentals for <EM>"+ customer.getName()+ "</EM></H1><P>\n";
+        return "<H1>Rentals for <EM>" + customer.getName() + "</EM></H1><P>\n";
     }
 }
