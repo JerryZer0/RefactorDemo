@@ -10,7 +10,7 @@ public class CustomerTest {
     @Test
     public void should_return_the_HTML_result_as_name_is_Jerry_and_has_no_films() {
 
-        String receipt = customer.statement();
+        String receipt = customer.htmlStatement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "<P>You owe<EM>0.0</EM><P>\n"
@@ -23,7 +23,7 @@ public class CustomerTest {
         Rental rental1 = new Rental(movie1, 1);
         customer.addRental(rental1);
 
-        String receipt = customer.statement();
+        String receipt = customer.htmlStatement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "Roman Holiday\t2.0<BR>\n"
@@ -37,7 +37,7 @@ public class CustomerTest {
         Rental rental1 = new Rental(movie1, 3);
         customer.addRental(rental1);
 
-        String receipt = customer.statement();
+        String receipt = customer.htmlStatement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "Roman Holiday\t3.5<BR>\n"
@@ -51,7 +51,7 @@ public class CustomerTest {
         Rental rental1 = new Rental(movie, 1);
         customer.addRental(rental1);
 
-        String receipt = customer.statement();
+        String receipt = customer.htmlStatement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "Roman Holiday\t3.0<BR>\n"
@@ -65,7 +65,7 @@ public class CustomerTest {
         Rental rental1 = new Rental(movie, 1);
         customer.addRental(rental1);
 
-        String receipt = customer.statement();
+        String receipt = customer.htmlStatement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "Roman Holiday\t1.5<BR>\n"
@@ -82,7 +82,7 @@ public class CustomerTest {
         customer.addRental(rental1);
         customer.addRental(rental2);
 
-        String receipt = customer.statement();
+        String receipt = customer.htmlStatement();
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "Roman Holiday\t3.0<BR>\n"
