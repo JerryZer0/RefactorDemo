@@ -14,7 +14,7 @@ public class TextStatement {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration<Rental> rentals = customer.getRentals().elements();
-        String result = "Rentals for " + customer.getName() + "\n";
+        String result = getResult();
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = rentals.nextElement();
@@ -45,13 +45,30 @@ public class TextStatement {
             }
 
             //show figures for this rental
-            result += each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
+            result += getBody(thisAmount, each);
             totalAmount += thisAmount;
         }
 
         //add footer lines
-        result += "You owe " + String.valueOf(totalAmount) + "\n";
-        result += "On this rental you earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        result = getFooter(totalAmount, frequentRenterPoints, result);
+        return result;
+    }
+
+    private String getResult() {
+        return "Rentals for " + customer.getName() + "\n";
+    }
+
+    private String getBody(double thisAmount, Rental each) {
+        return each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
+    }
+
+    private String getFooter(double totalAmount, int frequentRenterPoints, String result) {
+        result += "You owe "
+                + String.valueOf(totalAmount)
+                + "\n"
+                + "On this rental you earned "
+                + String.valueOf(frequentRenterPoints)
+                + " frequent renter points";
         return result;
     }
 }
