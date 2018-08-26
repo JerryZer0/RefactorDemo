@@ -1,7 +1,5 @@
 package rentalstore;
 
-import java.util.Enumeration;
-
 public class TextStatement extends Statement{
 
     private Customer customer;
@@ -19,7 +17,7 @@ public class TextStatement extends Statement{
         return each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
     }
 
-    public String getFooter(double totalAmount, int frequentRenterPoints) {
+    public String getFooter(double totalAmount, double frequentRenterPoints) {
         return "You owe "
                 + String.valueOf(totalAmount)
                 + "\n"

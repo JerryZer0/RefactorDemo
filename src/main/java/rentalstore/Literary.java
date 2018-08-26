@@ -7,4 +7,7 @@ public class Literary extends MovieType {
         return  thisAmount;
     }
 
+    public double updateFrequentRenterPointers(double frequentRenterPoints, int dayRented){
+        return frequentRenterPoints+1.5;
+    }
 }

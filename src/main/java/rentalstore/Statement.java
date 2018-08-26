@@ -12,7 +12,7 @@ public abstract class Statement {
 
     String statement() {
         double totalAmount = 0;
-        int frequentRenterPoints = 0;
+        double frequentRenterPoints = 0;
         Enumeration<Rental> rentals = customer.getRentals().elements();
         String result = getHeader();
 
@@ -31,6 +31,6 @@ public abstract class Statement {
 
     public abstract String getHeader();
     public abstract String getBody(double thisAmount, Rental each);
-    public abstract String getFooter(double totalAmount, int frequentRenterPoints);
+    public abstract String getFooter(double totalAmount, double frequentRenterPoints);
 
 }

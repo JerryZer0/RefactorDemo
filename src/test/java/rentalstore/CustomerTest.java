@@ -14,7 +14,7 @@ public class CustomerTest {
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "<P>You owe<EM>0.0</EM><P>\n"
-                + "On this rental you earned <EM>0</EM> frequent renter points<P>", receipt);
+                + "On this rental you earned <EM>0.0</EM> frequent renter points<P>", receipt);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class CustomerTest {
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "Roman Holiday\t2.0<BR>\n"
                 + "<P>You owe<EM>2.0</EM><P>\n"
-                + "On this rental you earned <EM>1</EM> frequent renter points<P>", receipt);
+                + "On this rental you earned <EM>1.0</EM> frequent renter points<P>", receipt);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class CustomerTest {
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "Roman Holiday\t3.5<BR>\n"
                 + "<P>You owe<EM>3.5</EM><P>\n"
-                + "On this rental you earned <EM>1</EM> frequent renter points<P>", receipt);
+                + "On this rental you earned <EM>1.0</EM> frequent renter points<P>", receipt);
     }
 
     @Test
@@ -56,7 +56,7 @@ public class CustomerTest {
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "Roman Holiday\t3.0<BR>\n"
                 + "<P>You owe<EM>3.0</EM><P>\n"
-                + "On this rental you earned <EM>1</EM> frequent renter points<P>", receipt);
+                + "On this rental you earned <EM>1.0</EM> frequent renter points<P>", receipt);
     }
 
     @Test
@@ -70,7 +70,7 @@ public class CustomerTest {
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n"
                 + "Roman Holiday\t1.5<BR>\n"
                 + "<P>You owe<EM>1.5</EM><P>\n"
-                + "On this rental you earned <EM>1</EM> frequent renter points<P>", receipt);
+                + "On this rental you earned <EM>1.0</EM> frequent renter points<P>", receipt);
     }
 
     @Test
@@ -88,7 +88,7 @@ public class CustomerTest {
                 + "Roman Holiday\t3.0<BR>\n"
                 + "Titanic\t3.0<BR>\n"
                 + "<P>You owe<EM>6.0</EM><P>\n"
-                + "On this rental you earned <EM>2</EM> frequent renter points<P>", receipt);
+                + "On this rental you earned <EM>2.0</EM> frequent renter points<P>", receipt);
     }
 
     @Test
@@ -106,7 +106,7 @@ public class CustomerTest {
                 + "Roman Holiday\t3.0\n"
                 + "Titanic\t3.0\n"
                 + "You owe 6.0\n"
-                + "On this rental you earned 2 frequent renter points", receipt);
+                + "On this rental you earned 2.0 frequent renter points", receipt);
     }
 
     @Test

@@ -22,7 +22,7 @@ public class HtmlStatement extends Statement {
                 + "<BR>\n";
     }
 
-    public String getFooter(double totalAmount, int frequentRenterPoints) {
+    public String getFooter(double totalAmount, double frequentRenterPoints) {
         return "<P>You owe<EM>"
                 + String.valueOf(totalAmount)
                 + "</EM><P>\n"

@@ -21,7 +21,7 @@ public class Rental {
         return movie.getAmount(getDayRented());
     }
 
-    public int updateFrequentRenterPointers(int frequentRenterPoints) {
+    public double updateFrequentRenterPointers(double frequentRenterPoints) {
         return movie.updateFrequentRenterPointers(frequentRenterPoints,getDayRented());
     }
 }

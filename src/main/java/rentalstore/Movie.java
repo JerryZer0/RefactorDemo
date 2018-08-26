@@ -22,7 +22,7 @@ public class Movie {
         return type.getAmount(dayRented);
     }
 
-    public int updateFrequentRenterPointers(int frequentRenterPoints, int dayRented) {
+    public double updateFrequentRenterPointers(double frequentRenterPoints, int dayRented) {
         return type.updateFrequentRenterPointers(frequentRenterPoints,dayRented);
     }
 }
