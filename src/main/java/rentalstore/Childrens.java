@@ -1,10 +1,10 @@
 package rentalstore;
 
 public class Childrens extends MovieType{
-    public double getAmount(Rental rental) {
+    public double getAmount(int dayRented) {
         double thisAmount = 1.5;
-        if (rental.getDayRented() > 3) {
-            thisAmount += (rental.getDayRented() - 3) * 1.5;
+        if (dayRented > 3) {
+            thisAmount += (dayRented - 3) * 1.5;
         }
         return thisAmount;
     }

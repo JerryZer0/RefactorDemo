@@ -15,11 +15,12 @@ public abstract class Statement {
         int frequentRenterPoints = 0;
         Enumeration<Rental> rentals = customer.getRentals().elements();
         String result = getHeader();
+
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = rentals.nextElement();
             //Movie movie = each.getMovie();
-            thisAmount += each.getMovie().getType().getAmount(each);
+            thisAmount += each.getAmount();
             frequentRenterPoints++;
             //add bonus for a two day new release rental
             if ((each.getMovie().getType().getClass() == NewRelease.class) && each.getDayRented() > 1) {

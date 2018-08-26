@@ -17,4 +17,8 @@ public class Movie {
     public MovieType getType() {
         return type;
     }
+
+    public double getAmount(int dayRented){
+        return type.getAmount(dayRented);
+    }
 }
