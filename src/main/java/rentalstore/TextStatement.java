@@ -1,37 +1,20 @@
 package rentalstore;
 
 import java.util.Enumeration;
-import java.util.Vector;
 
-class Customer {
-    private String name;
-    private Vector<Rental> rentals = new Vector<Rental>();
+public class TextStatement {
 
-    Customer(String name) {
-        this.name = name;
+    private Customer customer;
+
+    public TextStatement(Customer customer) {
+        this.customer = customer;
     }
 
-    void addRental(Rental arg){
-        rentals.addElement(arg);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String textStatement(){
-        return new TextStatement(this).textStatement();
-    }
-
-    public Vector<Rental> getRentals() {
-        return rentals;
-    }
-
-    String htmlStatement() {
+    String textStatement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
-        Enumeration<Rental> rentals = this.rentals.elements();
-        String result = "<H1>Rentals for <EM>" + getName() + "</EM></H1><P>\n";
+        Enumeration<Rental> rentals = customer.getRentals().elements();
+        String result = "Rentals for " + customer.getName() + "\n";
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = rentals.nextElement();
@@ -62,13 +45,13 @@ class Customer {
             }
 
             //show figures for this rental
-            result += each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "<BR>\n";
+            result += each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
         }
 
         //add footer lines
-        result += "<P>You owe<EM>" + String.valueOf(totalAmount) + "</EM><P>\n";
-        result += "On this rental you earned <EM>" + String.valueOf(frequentRenterPoints) + "</EM> frequent renter points<P>";
+        result += "You owe " + String.valueOf(totalAmount) + "\n";
+        result += "On this rental you earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
         return result;
     }
 }
