@@ -2,19 +2,19 @@ package rentalstore;
 
 import java.util.Enumeration;
 
-public class TextStatement {
+public class HtmlStatement {
 
     private Customer customer;
 
-    public TextStatement(Customer customer) {
+    public HtmlStatement(Customer customer) {
         this.customer = customer;
     }
 
-    String statement() {
+    public String statement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration<Rental> rentals = customer.getRentals().elements();
-        String result = "Rentals for " + customer.getName() + "\n";
+        String result = "<H1>Rentals for <EM>" + customer.getName() + "</EM></H1><P>\n";
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = rentals.nextElement();
@@ -45,13 +45,13 @@ public class TextStatement {
             }
 
             //show figures for this rental
-            result += each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
+            result += each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "<BR>\n";
             totalAmount += thisAmount;
         }
 
         //add footer lines
-        result += "You owe " + String.valueOf(totalAmount) + "\n";
-        result += "On this rental you earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        result += "<P>You owe<EM>" + String.valueOf(totalAmount) + "</EM><P>\n";
+        result += "On this rental you earned <EM>" + String.valueOf(frequentRenterPoints) + "</EM> frequent renter points<P>";
         return result;
     }
 }
