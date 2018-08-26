@@ -22,7 +22,7 @@ public abstract class Statement {
             thisAmount += each.getMovie().getType().getAmount(each);
             frequentRenterPoints++;
             //add bonus for a two day new release rental
-            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDayRented() > 1) {
+            if ((each.getMovie().getType().getClass() == NewRelease.class) && each.getDayRented() > 1) {
                 frequentRenterPoints++;
             }
 
